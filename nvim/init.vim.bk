@@ -1,0 +1,3 @@
+let &runtimepath.=', "~/.config/nvim/lua"'
+
+lua require('basic')
