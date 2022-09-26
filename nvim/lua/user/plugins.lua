@@ -105,6 +105,7 @@ return require('packer').startup(function(use)
       run = ':TSUpdate'
   }
 
+  -- Auto Pairing
   use {
     "windwp/nvim-autopairs",
     config = function()

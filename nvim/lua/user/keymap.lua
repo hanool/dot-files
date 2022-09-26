@@ -9,7 +9,7 @@ function map(mode, lhs, rhs, opts)
     vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
-map("n", "<Leader>R", ":source ~/.config/nvim/init.lua <CR>")
+map("n", "<Leader>R", ":source $MYVIMRC <CR>")
 map("n", "<Leader>v", ":CHADopen --always-focus<CR>")
 map("n", "<Leader>c", ":CHADopen<CR>")
 map("n", "gt", "<cmd>BufferNext<CR>")

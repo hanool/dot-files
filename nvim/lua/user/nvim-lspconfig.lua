@@ -3,11 +3,11 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-require'lspconfig'.html.setup {
+local lspconfig = require('lspconfig')
+
+lspconfig.html.setup {
   capabilities = capabilities,
 }
-
-local lspconfig = require('lspconfig')
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
 local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'eslint', 'cssls', 'svelte'}
