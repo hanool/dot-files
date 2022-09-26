@@ -27,7 +27,9 @@ vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.smartindent = true
 
-vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
+-- Formatting Options
+vim.cmd('autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o') -- no continous comment on new line
+vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]     -- format on save
 
 -- Netrw(File Explorer)
   -- When browsing, <cr> will open the file by 
