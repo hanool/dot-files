@@ -105,6 +105,13 @@ return require('packer').startup(function(use)
       run = ':TSUpdate'
   }
 
+  use {
+    "windwp/nvim-autopairs",
+    config = function()
+      require("nvim-autopairs").setup()
+    end
+}
+
   -- MarkDown
 	use { 
 		"iamcco/markdown-preview.nvim", 
