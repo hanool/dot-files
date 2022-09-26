@@ -26,6 +26,8 @@ vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.smartindent = true
 
+vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
+
 -- Netrw(File Explorer)
   -- When browsing, <cr> will open the file by 
   -- 0: re-using the same window (default), 
