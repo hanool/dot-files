@@ -2,6 +2,7 @@ vim.cmd('let $LANG="en"')
 vim.cmd('autocmd!')
 
 vim.cmd('colorscheme duskfox')
+vim.cmd('autocmd VimEnter * CHADopen')      -- open CHADTree on start up
 
 vim.opt.termguicolors = true
 vim.scriptencoding = 'utf-8'
