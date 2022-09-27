@@ -3,9 +3,14 @@ if not null_ls_status_ok then
 	return
 end
 
+local formatting = null_ls.builtins.formatting
+local diagnostics = null_ls.builtins.diagnostics
+
 null_ls.setup {
   sources = {
-    null_ls.builtins.formatting.prettier,
-    null_ls.builtins.diagnostics.zsh
+    formatting.prettier.with({
+      extra_args = { "--no-semi", "--single-quote", }
+    }),
+    diagnostics.zsh
   },
 }
