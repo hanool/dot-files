@@ -1,9 +1,6 @@
 vim.cmd('let $LANG="en"')
 vim.cmd('autocmd!')
 
-vim.cmd('colorscheme duskfox')
-vim.cmd('autocmd VimEnter * CHADopen')      -- open CHADTree on start up
-
 vim.opt.termguicolors = true
 vim.scriptencoding = 'utf-8'
 vim.opt.encoding = 'utf-8'
@@ -39,3 +36,13 @@ vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]     -- forma
   -- 3: open file in a new tab, 
   -- 4: act like “P” (i.e. open the previous window).
 vim.g.netrw_browse_split = 3
+
+-- Setup Plugins 
+vim.cmd('colorscheme duskfox')
+vim.cmd('autocmd VimEnter * CHADopen')      -- open CHADTree on start up
+
+local plugins = { 'lualine', 'mason', 'mason-lspconfig', 'colorizer' }
+for _, plugin in ipairs(plugins) do
+  require(plugin).setup()
+end
+

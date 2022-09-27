@@ -16,12 +16,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
   vim.cmd [[packadd packer.nvim]]
 end
 
--- Setup Plugins ==> MOVE TO SEPERATED FILES SOME DAY <==
-local plugins = { 'lualine', 'mason', 'mason-lspconfig', 'colorizer' }
-for _, plugin in ipairs(plugins) do
-  require(plugin).setup()
-end
-
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
 vim.cmd [[
   augroup packer_user_config
