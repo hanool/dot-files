@@ -5,18 +5,26 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 local lspconfig = require('lspconfig')
 
-lspconfig.html.setup {
-  capabilities = capabilities,
-}
-
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'eslint', 'cssls', 'svelte'}
+local servers = { 'rust_analyzer', 'tsserver', 'html', 'eslint', 'cssls'}
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
-    -- on_attach = my_custom_on_attach,
+    on_attach = function(client)
+      if lsp == 'tsserver' or lsp == 'html' then
+        client.resolved_capabilities.document_formatting = false
+      end
+    end,
     capabilities = capabilities,
   }
 end
+
+vim.diagnostic.config({
+  virtual_text = false
+})
+
+-- Show line diagnostics automatically in hover window
+vim.o.updatetime = 250
+vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
 
 -- luasnip setup
 local luasnip = require 'luasnip'
