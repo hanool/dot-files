@@ -63,6 +63,24 @@ cmp.setup {
         fallback()
       end
     end, { 'i', 's' }),
+    ['<Down>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      elseif luasnip.choice_active() then
+        luasnip.change_choice(1)
+      else
+        fallback()
+      end
+    end, { 'i', 's' }),
+    ['<Up>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      elseif luasnip.choice_active() then
+        luasnip.change_choice(-1)
+      else
+        fallback()
+      end
+    end, { 'i', 's' }),
   }),
   sources = {
     { name = 'nvim_lsp' },

@@ -81,8 +81,11 @@ return require('packer').startup(function(use)
   -- LSP Config
   use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
   use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
-  use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
-  use 'L3MON4D3/LuaSnip' -- Snippets plugin
+  --use_rocks 'jsregexp'
+  use {
+    'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
+  }
+  use { 'L3MON4D3/LuaSnip', tag = "v<CurrentMajor>.*"} -- Snippets plugin
 
   use {
       "williamboman/mason.nvim",
