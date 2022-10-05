@@ -39,7 +39,7 @@ vim.g.netrw_browse_split = 3
 
 -- Setup Plugins 
 vim.cmd('colorscheme duskfox')
-vim.cmd('autocmd VimEnter * CHADopen')      -- open CHADTree on start up
+vim.cmd('autocmd VimEnter * CHADopen --nofocus')      -- open CHADTree on start up
 
 local plugins = { 'lualine', 'mason', 'mason-lspconfig', 'colorizer' }
 for _, plugin in ipairs(plugins) do
