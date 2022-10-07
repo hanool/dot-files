@@ -64,6 +64,18 @@ return require('packer').startup(function(use)
 		}
 	}
 
+  -- Yanky - improve yank and put functionalities
+  use({
+    "gbprod/yanky.nvim",
+    config = function()
+      require("yanky").setup({
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      })
+    end
+  })
+
   -- == LISP SETTING == --
 
   -- Null-ls
