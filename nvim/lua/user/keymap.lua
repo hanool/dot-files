@@ -2,11 +2,11 @@ vim.g.mapleader = " "
 
 -- Functional wrapper for mapping custom keybindings
 function map(mode, lhs, rhs, opts)
-    local options = { noremap = true }
-    if opts then
-        options = vim.tbl_extend("force", options, opts)
-    end
-    vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+  local options = { noremap = true }
+  if opts then
+    options = vim.tbl_extend("force", options, opts)
+  end
+  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
 -- Config
@@ -35,10 +35,10 @@ map("n", "<Leader>x", "<cmd>BufferClose<CR>")
 map("n", "<Leader>F", ":Telescope live_grep<CR>")
 
 -- Yanky yank
-vim.keymap.set({"n","x"}, "p", "<Plug>(YankyPutAfter)")
-vim.keymap.set({"n","x"}, "P", "<Plug>(YankyPutBefore)")
-vim.keymap.set({"n","x"}, "gp", "<Plug>(YankyGPutAfter)")
-vim.keymap.set({"n","x"}, "gP", "<Plug>(YankyGPutBefore)")
+vim.keymap.set({ "n", "x" }, "p", "<Plug>(YankyPutAfter)")
+vim.keymap.set({ "n", "x" }, "P", "<Plug>(YankyPutBefore)")
+vim.keymap.set({ "n", "x" }, "gp", "<Plug>(YankyGPutAfter)")
+vim.keymap.set({ "n", "x" }, "gP", "<Plug>(YankyGPutBefore)")
 vim.keymap.set("n", "<c-n>", "<Plug>(YankyCycleForward)")
 vim.keymap.set("n", "<c-p>", "<Plug>(YankyCycleBackward)")
 

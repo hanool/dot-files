@@ -27,7 +27,7 @@ vim.cmd [[
 -- Packer Loading
 return require('packer').startup(function(use)
   -- Packer can manage itself
-	use 'wbthomason/packer.nvim'
+  use 'wbthomason/packer.nvim'
   use "nvim-lua/plenary.nvim"
   use 'kyazdani42/nvim-web-devicons'
 
@@ -54,15 +54,15 @@ return require('packer').startup(function(use)
   }
 
   -- CheatSheet Command
-	use {
-		'sudormrfbin/cheatsheet.nvim',
+  use {
+    'sudormrfbin/cheatsheet.nvim',
 
-		requires = {
-			{'nvim-telescope/telescope.nvim'},
-			{'nvim-lua/popup.nvim'},
-			{'nvim-lua/plenary.nvim'},
-		}
-	}
+    requires = {
+      { 'nvim-telescope/telescope.nvim' },
+      { 'nvim-lua/popup.nvim' },
+      { 'nvim-lua/plenary.nvim' },
+    }
+  }
 
   -- Yanky - improve yank and put functionalities
   use({
@@ -79,8 +79,8 @@ return require('packer').startup(function(use)
   -- == LISP SETTING == --
 
   -- Null-ls
-  use { 
-    "jose-elias-alvarez/null-ls.nvim", 
+  use {
+    "jose-elias-alvarez/null-ls.nvim",
     requires = { "nvim-lua/plenary.nvim" },
     config = function()
       require('null-ls').setup()
@@ -97,12 +97,12 @@ return require('packer').startup(function(use)
   use {
     'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
   }
-  use { 'L3MON4D3/LuaSnip', tag = "v<CurrentMajor>.*"} -- Snippets plugin
+  use { 'L3MON4D3/LuaSnip', tag = "v<CurrentMajor>.*" } -- Snippets plugin
 
   use {
-      "williamboman/mason.nvim",
-      "williamboman/mason-lspconfig.nvim",
-      "neovim/nvim-lspconfig",
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
   }
 
   -- ColorHighlighter
@@ -110,8 +110,8 @@ return require('packer').startup(function(use)
 
   -- TreeSitter
   use {
-      'nvim-treesitter/nvim-treesitter',
-      run = ':TSUpdate'
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
   }
 
   -- Auto Pairing
@@ -120,15 +120,15 @@ return require('packer').startup(function(use)
     config = function()
       require("nvim-autopairs").setup()
     end
-}
+  }
 
   -- MarkDown
-	use { 
-		"iamcco/markdown-preview.nvim", 
-		run = "cd app && npm install", 
-		setup = function() vim.g.mkdp_filetypes = { "markdown" } end, 
-		ft = { "markdown" }, 
-	}
+  use {
+    "iamcco/markdown-preview.nvim",
+    run = "cd app && npm install",
+    setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
+    ft = { "markdown" },
+  }
 
   -- HTML
   use 'mattn/emmet-vim'
@@ -137,9 +137,9 @@ return require('packer').startup(function(use)
   use {
     "nvim-neorg/neorg",
     config = function()
-        require('neorg').setup {
-            -- check out setup part...
-        }
+      require('neorg').setup {
+        -- check out setup part...
+      }
     end,
     requires = "nvim-lua/plenary.nvim"
   }
