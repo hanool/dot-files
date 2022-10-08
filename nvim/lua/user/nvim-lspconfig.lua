@@ -6,11 +6,11 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 local lspconfig = require('lspconfig')
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-local servers = { 'rust_analyzer', 'tsserver', 'html', 'eslint', 'cssls'}
+local servers = { 'bashls', 'rust_analyzer', 'tsserver', 'html', 'eslint', 'cssls' }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = function(client)
-      if lsp == 'tsserver' or lsp == 'html' then
+      if lsp == 'tsserver' or lsp == 'html' then -- js, html will format with prettier
         client.resolved_capabilities.document_formatting = false
       end
     end,
