@@ -5,8 +5,7 @@ Just my humble dot files.
 ## Installation
 
 ```shell
-# if chmod not setted
-$ chmod +x ./install
-
+$ git clone https://github.com/hanool/dot-files.git
+$ cd ./dot-files
 $ ./install.sh
 ```
