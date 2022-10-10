@@ -53,6 +53,23 @@ return require('packer').startup(function(use)
     run = "python3 -m chadtree deps"
   }
 
+  -- telescope
+  use {
+    'nvim-telescope/telescope.nvim',
+
+    config = function()
+      require("telescope").setup({
+        pickers = {
+          live_grep = {
+            additional_args = function(opts)
+              return { "--hidden" }
+            end
+          },
+        },
+      })
+    end,
+  }
+
   -- CheatSheet Command
   use {
     'sudormrfbin/cheatsheet.nvim',
