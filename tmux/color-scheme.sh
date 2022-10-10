@@ -6,6 +6,7 @@ color=(white dark_gray gray light_purple dark_purple cyan green orange red pink 
 color_white='#f8f8f2'
 color_dark_gray='#282a36'
 color_gray='#44475a'
+color_light_gray='#333333'
 color_light_purple='#bd93f9'
 color_dark_purple='#6272a4'
 color_cyan='#8be9fd'
@@ -17,7 +18,11 @@ color_yellow='#f1fa8c'
 
 # get options having color scheme value
 declare -a names
-names=( $(tmux show | awk -v color_key="$color_key" '($1 ~ /status\-/) && ($2 ~ color_key) { print $0 }' | cut -d ' ' -f 1) )
+names=( \
+  $(tmux show | \
+    awk -v color_key="$color_key" '($1 ~ /status\-/) && ($2 ~ color_key) { print $0 }' | \
+    cut -d ' ' -f 1) \
+  )
 
 # each color keys, replace option value to color value
 for name in "${names[@]}"
@@ -33,4 +38,3 @@ do
   # set replaced option values to tmux
   eval "tmux set $opt"
 done
-
