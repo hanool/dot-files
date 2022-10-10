@@ -19,7 +19,7 @@ color_yellow='#f1fa8c'
 # get options having color scheme value
 declare -a names
 names=( \
-  $(tmux show | \
+  $(tmux show -g | \
     awk -v color_key="$color_key" '($1 ~ /status\-/) && ($2 ~ color_key) { print $0 }' | \
     cut -d ' ' -f 1) \
   )
@@ -27,7 +27,7 @@ names=( \
 # each color keys, replace option value to color value
 for name in "${names[@]}"
 do
-  opt="$(tmux show $name)"
+  opt="$(tmux show -g $name)"
 
   for color_key in "${color[@]}" ;
   do
@@ -36,5 +36,5 @@ do
   done
 
   # set replaced option values to tmux
-  eval "tmux set $opt"
+  eval "tmux set -g $opt"
 done
