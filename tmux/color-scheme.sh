@@ -3,7 +3,7 @@
 # ColorScheme
 declare -a color
 color=(white dark_gray gray light_purple dark_purple cyan green orange red pink yellow)
-color_white='#f8f8f2'
+color_white='#c8c8c2'
 color_dark_gray='#282a36'
 color_gray='#44475a'
 color_light_gray='#333333'
