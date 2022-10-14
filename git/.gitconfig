@@ -1,0 +1,36 @@
+# general configs
+[pull]
+	rebase = true
+[init]
+	defaultBranch = main
+
+[alias]
+  restore-staged = reset HEAD -- .
+  lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+  lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+  lg = !"git lg1"
+  hide = update-index --assume-unchanged 
+  unhide = update-index --no-assume-unchanged
+  unhide-all = update-index --really-refresh
+  ls-hidden = !"git ls-files -v | grep '^h'"
+
+# use git-delta for diff
+[core]
+    pager = delta
+[interactive]
+    diffFilter = delta --color-only
+[add.interactive]
+    useBuiltin = true # required for git 2.37.0
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+    side-by-side = true
+    line-numbers = true
+[merge]
+    conflictstyle = diff3
+[diff]
+    colorMoved = default
+
+# local configs (username, email, etc ..)
+[include]
+  path = ~/.gitconfig.local
