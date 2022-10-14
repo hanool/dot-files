@@ -7,5 +7,5 @@ Just my humble dot files.
 ```shell
 $ git clone https://github.com/hanool/dot-files.git
 $ cd ./dot-files
-$ ./install.sh
+$ ./install
 ```
