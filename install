@@ -6,6 +6,10 @@ CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 ln -sf "$CURRENT_DIR/tmux/.tmux.conf" "$HOME/.tmux.conf"
 
 # git configs
+if [ -f "$HOME/.gitconfig" ] && [ ! -L "$HOME/.gitconfig" ]
+then
+  mv "$HOME/.gitconfig" "$HOME/.gitconfig.local"
+fi
 ln -sf "$CURRENT_DIR/git/.gitconfig" "$HOME/.gitconfig"
 
 # nvim configs
