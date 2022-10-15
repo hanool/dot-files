@@ -4,6 +4,7 @@ CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # tmux configs
 ln -sf "$CURRENT_DIR/tmux/.tmux.conf" "$HOME/.tmux.conf"
+tmux source "$HOME/.tmux.conf"
 
 # git configs
 if [ -f "$HOME/.gitconfig" ] && [ ! -L "$HOME/.gitconfig" ]
