@@ -2,6 +2,20 @@
 
 CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+# zsh configs
+if [ -f ~/.zshrc ]
+then
+  local zshrc_local="$HOME/.zshrc.local"
+  if [ -z "$(cat $HOME/.zshrc | grep "source $zshrc_local")" ]
+  then
+    echo "source $zshrc_local" >> "$HOME/.zshrc"
+  fi
+  ln -sf "$CURRENT_DIR/zsh/.zshrc" "$zshrc_local"
+else
+  ln -sf "$CURRENT_DIR/zsh/.zshrc" "$HOME/.zshrc"
+fi
+source "$HOME/.zshrc"
+
 # tmux configs
 ln -sf "$CURRENT_DIR/tmux/.tmux.conf" "$HOME/.tmux.conf"
 tmux source "$HOME/.tmux.conf"
