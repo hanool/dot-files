@@ -46,6 +46,8 @@ return require('packer').startup(function(use)
     requires = { 'kyazdani42/nvim-web-devicons' }
   }
 
+  use "lukas-reineke/indent-blankline.nvim"
+
   -- File Tree Viewer
   use {
     "ms-jpq/chadtree",
