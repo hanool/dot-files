@@ -51,3 +51,7 @@ map("i", "C-Enter", "<C-o>o")
 
 map("v", "∆", ":m '>+1<CR>gv=gv")
 map("v", "˚", ":m '<-2<CR>gv=gv")
+
+-- go to definition
+map("n", "gd", ":lua vim.lsp.buf.definition()<CR>")
+map("n", "<Leader><Leader>", ":lua vim.lsp.buf.hover()<CR>")
