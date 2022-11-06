@@ -126,6 +126,7 @@ return require('packer').startup(function(use)
 
   -- ColorHighlighter
   use 'norcalli/nvim-colorizer.lua'
+  use 'aliou/bats.vim'
 
   -- TreeSitter
   use {
