@@ -34,3 +34,5 @@
 # local configs (username, email, etc ..)
 [include]
   path = ~/.gitconfig.local
+[credential]
+	helper = store
