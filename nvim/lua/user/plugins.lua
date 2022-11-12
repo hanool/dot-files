@@ -55,6 +55,18 @@ return require('packer').startup(function(use)
     run = "python3 -m chadtree deps"
   }
 
+  -- Which Key
+  use {
+    "folke/which-key.nvim",
+    config = function()
+      require("which-key").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
+  }
+
   -- telescope
   use {
     'nvim-telescope/telescope.nvim',
