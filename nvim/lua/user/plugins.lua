@@ -55,6 +55,14 @@ return require('packer').startup(function(use)
     run = "python3 -m chadtree deps"
   }
 
+  -- Commenting
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup()
+    end
+  }
+
   -- Which Key
   use {
     "folke/which-key.nvim",
