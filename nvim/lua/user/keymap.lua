@@ -34,6 +34,10 @@ map("n", "<Leader>x", "<cmd>BufferClose<CR>")
 -- Telescope
 map("n", "<Leader>F", ":Telescope live_grep<CR>")
 
+-- Folding
+map("n", "<C-m>m", ":foldclose<CR>")
+map("n", "<C-m><C-m>", ":foldopen<CR>")
+
 -- Yanky yank
 vim.keymap.set({ "n", "x" }, "p", "<Plug>(YankyPutAfter)")
 vim.keymap.set({ "n", "x" }, "P", "<Plug>(YankyPutBefore)")

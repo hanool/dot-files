@@ -4,5 +4,6 @@ require('user.basic')
 require('user.nvim-lspconfig')
 require('user.lsp')
 require('user.snippets')
+require('user.ufo')
 
 print('Configuration Reloaded')

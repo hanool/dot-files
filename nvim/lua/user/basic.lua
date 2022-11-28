@@ -38,7 +38,7 @@ vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]] -- format on
 vim.g.netrw_browse_split = 3
 
 -- Setup Plugins
-vim.cmd('colorscheme duskfox')
+-- vim.cmd('colorscheme duskfox')
 vim.cmd('autocmd VimEnter * CHADopen --nofocus') -- open CHADTree on start up
 
 local plugins = { 'lualine', 'mason', 'mason-lspconfig', 'colorizer' }

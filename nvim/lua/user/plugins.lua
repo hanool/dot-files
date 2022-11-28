@@ -48,6 +48,8 @@ return require('packer').startup(function(use)
 
   use "lukas-reineke/indent-blankline.nvim"
 
+  use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
+
   -- File Tree Viewer
   use {
     "ms-jpq/chadtree",
