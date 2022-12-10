@@ -48,7 +48,7 @@ return require('packer').startup(function(use)
 
   use "lukas-reineke/indent-blankline.nvim"
 
-  use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
+  use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
 
   -- File Tree Viewer
   use {
@@ -138,7 +138,7 @@ return require('packer').startup(function(use)
   use {
     'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
   }
-  use { 'L3MON4D3/LuaSnip', tag = "v<CurrentMajor>.*" } -- Snippets plugin
+  use { 'L3MON4D3/LuaSnip' } -- Snippets plugin
 
   use {
     "williamboman/mason.nvim",
