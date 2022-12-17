@@ -11,7 +11,7 @@ for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = function(client)
       if lsp == 'tsserver' or lsp == 'html' then -- js, html will format with prettier
-        client.resolved_capabilities.document_formatting = false
+        client.server_capabilities.documentFormattingProvider = false
       end
     end,
     capabilities = capabilities,
