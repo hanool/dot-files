@@ -134,6 +134,7 @@ return require('packer').startup(function(use)
   -- LSP Config
   use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
   use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
+  use 'simrat39/rust-tools.nvim' -- Rust Configuration Plugin
   --use_rocks 'jsregexp'
   use {
     'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
