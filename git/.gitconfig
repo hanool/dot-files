@@ -13,6 +13,7 @@
   unhide = update-index --no-assume-unchanged
   unhide-all = update-index --really-refresh
   ls-hidden = !"git ls-files -v | grep '^h'"
+  show-hidden = !"git ls-files -v | grep '^h' | cut -c3- "
   add-untracked = !"printf \"a\\n*\\nq\\n\" | git add -i 1> /dev/null"
 
 # use git-delta for diff
