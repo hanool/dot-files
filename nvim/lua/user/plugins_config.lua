@@ -1,10 +1,6 @@
 -- One Dark (Theme)
 --vim.cmd("colorscheme nordfox")
-local onedark = require('onedark')
-onedark.setup {
-	style = 'warmer'
-}
-onedark.load()
+
 
 -- ToggleTerm
 local powershell_options = {

@@ -18,3 +18,8 @@ local plugins = { 'lualine', 'mason', 'mason-lspconfig', 'colorizer', 'ufo' }
 for _, plugin in ipairs(plugins) do
 	require(plugin).setup()
 end
+
+require('rose-pine')
+vim.cmd('colorscheme rose-pine')
+vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })

@@ -18,6 +18,8 @@ vim.opt.termguicolors = true
 
 vim.opt.colorcolumn = '99'
 
+vim.opt.modifiable = true
+
 -- Formatting Options
 vim.cmd('autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o') -- no continous comment on new line
-vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]                                -- format on save
+vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]] -- format on save

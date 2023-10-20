@@ -15,3 +15,4 @@ lsp.marksman.setup {}
 lsp.tsserver.setup {}
 lsp.dockerls.setup {}
 lsp.powershell_es.setup {}
+lsp.volar.setup {}

@@ -41,6 +41,7 @@ return require('packer').startup(function(use)
 	-- Theme
 	use "EdenEast/nightfox.nvim"
 	use 'navarasu/onedark.nvim'
+	use({ 'rose-pine/neovim', as = 'rose-pine' })
 
 	-- ColorHighlighter
 	use 'norcalli/nvim-colorizer.lua'
@@ -83,6 +84,9 @@ return require('packer').startup(function(use)
 
 	-- Rust
 	use 'simrat39/rust-tools.nvim'
+
+	-- Emmet
+	use 'mattn/emmet-vim'
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
