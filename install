@@ -16,7 +16,7 @@ else
 fi
 
 # macos zshrc
-if [ -f ~/.zshrc.mac ]
+if [ -f "$CURRENT_DIR/zsh/.zshrc.mac" ]
 then
   local zshrc_mac="$HOME/.zshrc.mac"
   if [ -z "$(cat "$HOME/.zshrc.local" | grep "source $zshrc_mac")" ]
