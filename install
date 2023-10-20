@@ -14,6 +14,18 @@ then
 else
   ln -sf "$CURRENT_DIR/zsh/.zshrc" "$HOME/.zshrc"
 fi
+
+# macos zshrc
+if [ -f ~/.zshrc.mac ]
+then
+  local zshrc_mac="$HOME/.zshrc.mac"
+  if [ -z "$(cat "$HOME/.zshrc.local" | grep "source $zshrc_mac")" ]
+  then
+    echo "source $zshrc_mac" >> "$HOME/.zshrc.local"
+  fi
+  ln -sf "$CURRENT_DIR/zsh/.zshrc.mac" "$zshrc_mac"
+fi
+
 source "$HOME/.zshrc"
 
 # tmux configs

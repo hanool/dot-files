@@ -1,0 +1,9 @@
+# path for macos
+JVM_DIR="/Library/Java/JavaVirtualMachines"
+JAVA_8_HOME="temurin-8.jdk/Contents/Home"
+JAVA_11_HOME="microsoft-11.jdk/Contents/Home"
+JAVA_17_HOME="temurin-17.jdk/Contents/Home"
+export JAVA_HOME="$JVM_DIR/$JAVA_17_HOME"
+
+export PATH="/Users/hyunsiklim/.local/bin:$PATH"
+export PATH="/Users/hyunsiklim/dev/tools/aseprite/build/bin:$PATH"
