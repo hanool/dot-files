@@ -19,6 +19,8 @@ vim.opt.colorcolumn = '99'
 
 vim.opt.modifiable = true
 
+vim.opt.shell = os.getenv('SHELL')
+
 -- Formatting Options
 -- no continous comment on new line
 vim.cmd('autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o')
