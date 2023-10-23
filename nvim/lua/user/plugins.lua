@@ -15,23 +15,18 @@ return require('packer').startup(function(use)
 	-- 'THE' packer
 	use 'wbthomason/packer.nvim'
 
+	use {
+		'nvim-telescope/telescope.nvim', tag = '0.1.4',
+		requires = {
+			{ 'nvim-lua/plenary.nvim' }
+		}
+	}
+
 	-- Post-install/update hook with neovim command
 	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
 	-- StatusLine
 	use 'nvim-tree/nvim-web-devicons'
-	--use {'romgrk/barbar.nvim', wants = 'nvim-web-devicons'}
-
-	use {
-		'nvim-lualine/lualine.nvim',
-		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-	}
-
-	-- TabLine
-	use {
-		'romgrk/barbar.nvim',
-		requires = { 'kyazdani42/nvim-web-devicons' }
-	}
 
 	-- UFO
 	use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
@@ -39,23 +34,7 @@ return require('packer').startup(function(use)
 	use "lukas-reineke/indent-blankline.nvim"
 
 	-- Theme
-	use "EdenEast/nightfox.nvim"
-	use 'navarasu/onedark.nvim'
 	use({ 'rose-pine/neovim', as = 'rose-pine' })
-
-	-- ColorHighlighter
-	use 'norcalli/nvim-colorizer.lua'
-
-	-- TreeViewer
-	use "preservim/nerdtree"
-
-	-- Markdown Previewer
-	use({
-		"iamcco/markdown-preview.nvim",
-		run = "cd app && npm install",
-		setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
-		ft = { "markdown" },
-	})
 
 	-- Terminal
 	use { "akinsho/toggleterm.nvim", tag = '*', config = function()
@@ -63,23 +42,34 @@ return require('packer').startup(function(use)
 	end }
 
 	-- ========== LSP ========== --
-	-- Eeeeasy
 	use {
-		"williamboman/mason.nvim",
-		"williamboman/mason-lspconfig.nvim",
-		"neovim/nvim-lspconfig",
+		'VonHeikemen/lsp-zero.nvim',
+		branch = 'v3.x',
+		requires = {
+			-- Easy LS Install
+			{ "williamboman/mason.nvim" },
+			{ "williamboman/mason-lspconfig.nvim" },
+
+			-- LSP Support
+			{ "neovim/nvim-lspconfig" },
+
+			-- Autocompletion
+			{ 'hrsh7th/cmp-nvim-lsp' },
+			{ 'hrsh7th/cmp-buffer' },
+			{ 'hrsh7th/cmp-path' },
+			{ 'hrsh7th/cmp-cmdline' },
+			{ 'hrsh7th/nvim-cmp' },
+		}
 	}
 
-	-- cmp
-	use 'hrsh7th/cmp-nvim-lsp'
-	use 'hrsh7th/cmp-buffer'
-	use 'hrsh7th/cmp-path'
-	use 'hrsh7th/cmp-cmdline'
-	use 'hrsh7th/nvim-cmp'
+	use { 'windwp/nvim-autopairs' }
+
+	use { 'windwp/nvim-ts-autotag' }
 
 	use {
 		'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
 	}
+
 	use { 'L3MON4D3/LuaSnip' } -- Snippets plugin
 
 	-- Rust

@@ -9,11 +9,6 @@ local function map(mode, lhs, rhs, opts)
 	vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
-map("n", "<Leader>n", ":NERDTreeFocus<CR>")
-map("n", "<Leader>n", ":NERDTree<CR>")
-map("n", "<Leader>v", ":NERDTreeToggle<CR>")
-map("n", "<Leader>c", ":NERDTreeFind<CR>")
-
 map("n", "gt", "<cmd>BufferNext<CR>")
 map("n", "gT", "<cmd>BufferPrevious<CR>")
 map("n", "g1", "<cmd>BufferGoto2<CR>")
