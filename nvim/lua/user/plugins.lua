@@ -26,7 +26,7 @@ return require('packer').startup(function(use)
 	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
 	-- StatusLine
-	use 'nvim-tree/nvim-web-devicons'
+	use { 'nvim-tree/nvim-tree.lua', requires = 'nvim-tree/nvim-web-devicons' }
 
 	-- UFO
 	use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
