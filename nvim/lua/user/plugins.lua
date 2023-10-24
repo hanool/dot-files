@@ -28,6 +28,9 @@ return require('packer').startup(function(use)
 	-- StatusLine
 	use { 'nvim-tree/nvim-tree.lua', requires = 'nvim-tree/nvim-web-devicons' }
 
+	-- yes, we need bufferlines
+	use { 'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons' }
+
 	-- UFO
 	use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
 
