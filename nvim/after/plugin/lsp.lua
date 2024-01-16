@@ -41,3 +41,14 @@ lsp.lua_ls.setup {
 	},
 }
 lsp.volar.setup {}
+
+-- set up LSP signs
+for type, icon in pairs({
+	Error = "",
+	Warn = "",
+	Hint = "",
+	Info = "",
+}) do
+	local hl = "DiagnosticSign" .. type
+	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+end

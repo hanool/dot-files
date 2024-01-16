@@ -17,4 +17,18 @@ map("n", "<C-m><C-m>", "za")
 map("n", "<Leader>T", "<cmd>ToggleTerm<CR>a")
 
 map("n", "gd", ":lua vim.lsp.buf.definition()<CR>")
-map("n", "<Leader><Leader>", ":lua vim.lsp.buf.hover()<CR>")
+map("n", "sd", ":lua vim.lsp.buf.hover()<CR>")
+
+vim.diagnostic.config({ virtual_text = false })
+
+local function on_hover()
+	if #vim.diagnostic.get(0) > 0 then
+		if vim.lsp.buf.server_ready() then
+			vim.diagnostic.open_float()
+		end
+	else
+		vim.lsp.buf.hover()
+	end
+end
+
+vim.keymap.set("n", "<Leader><Leader>", on_hover, opt)
