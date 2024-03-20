@@ -3,6 +3,7 @@ vim.opt.fileencodings = { 'utf-8', 'sjis' }
 vim.opt.hlsearch = true
 
 vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
 vim.opt.tabstop = 4
 vim.opt.smartindent = true
 
