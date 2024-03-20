@@ -13,6 +13,9 @@ end
 
 require('nvim-tree').setup({
 	on_attach = my_on_attach,
+	filters = {
+		git_ignored = false,
+	}
 })
 
 vim.keymap.set("n", "<Leader>c", "<cmd>NvimTreeToggle<CR>")
